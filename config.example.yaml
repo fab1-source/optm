@@ -1,0 +1,32 @@
+# Copy to config.yaml and fill in. After this one-time setup, run `optm run`.
+company:
+  name: Acme Corp
+  description: We make rocket-powered roller skates for busy professionals.
+  audience: Urban commuters, 25-45
+  tone: Friendly, witty, concise
+  topics:            # rotated automatically
+    - product tips
+    - behind the scenes
+    - customer stories
+    - industry news commentary
+  hashtags: ["#Acme", "#Skates"]
+  avoid: ["politics", "competitor bashing", "unverifiable claims"]
+
+model: claude-sonnet-5-5
+timezone: UTC
+database: optm.db
+dry_run: true          # set false to actually publish
+
+platforms:
+  x:
+    enabled: true
+    cron: "0 9,17 * * *"          # twice daily
+    page_id: ""
+  linkedin:
+    enabled: true
+    cron: "0 10 * * 1-5"          # weekdays
+    page_id: "12345678"           # organization id
+  facebook:
+    enabled: false
+    cron: "0 12 * * *"
+    page_id: "your_page_id"
